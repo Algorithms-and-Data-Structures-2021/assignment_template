@@ -1,39 +1,48 @@
-# C++ CMake template with unit testing capabilities
+# C++ autograded assignment template
 
-## Geting started
+## Имя студента
 
-1. Configure your project in top-level [`CMakeLists.txt`](CMakeLists.txt).
-2. Add third-party dependencies in [`contrib/CMakeLists.txt`](contrib/CMakeLists.txt).
-3. Write your awesome code in [`src`](src) and [`include`](include) folders by creating header and source files.
-4. Configure and create top notch unit tests in [`tests`](tests) folder using `Catch2` and `FakeIt` frameworks.
-5. Develop you project without any worry using provided CI workflows (with memory leaking check).
+*Пожалуйста, добавьте вместо курсивного текста своё ФИО*
 
-## Q&A
+## Описание задания
 
-> Where can I see CI workflow status?
+Подробное описание заданий.
 
-Well, click on `Actions` button and you will see "Check memory leaks workflow" section.
+## Цели
 
-This workflow runs on demand, i.e. manual launch is required. 
+- Все тесты должны пройти успешно:
+    - для этого разрешается вносить изменения только в файлы, указанные в инструкции ниже
 
->  How to clone and build this project?
+- GitHub Actions должен показывать зеленый маркер, сообщая о том, что все тесты пройдены успешно:
+    - красный маркер означает, что некоторые (или все) тесты провалились
+    - **Совет 1:** можно кликнуть на красный маркер, чтобы узнать какой тест провалился (или почему программа не
+      скомпилировалась)
+    - **Совет 2:** если результаты тестов не обновляются, то следует сообщить об этом преподавателю
 
-```shell
-git clone --recurse-submodules -j2 <repository url>
-```
+## Инструкции
 
-and from the project's folder:
-```shell
-mkdir -p build && cd build
+1. Добавьте свое ФИО в файл `README.md` (файл, который Вы сейчас читаете).
+2. Приведите решения к заданиям в файлах.
 
-cmake -DCMAKE_BUILD_TYPE=Release ..
-cmake --build . --config Release
-```
+**Остальные файлы изменять нельзя!**
 
-> What about running tests?
+Структура проекта:
 
-Build the project and run the following:
+- [`src`](src) - папка с исходным кодом программы.
+- [`include`](include) - папка с заголовочными файлами программы, необходима для предоставления интерфейса (API) для
+  тестирования кода.
+- [`tests`](tests) - Unit-тесты для проверки работоспособности кода.
+- [`contrib`](contrib) - папка со сторонними библиотеками.
+- [`CMakeLists.txt`](CMakeLists.txt) - главный файл системы автоматизации сборки проекта.
 
-```shell
-ctest -VV -C Release
-```
+## Как запустить?
+
+Импортируйте CMake проект в среду разработки (см. [инструкцию в Google Classroom](https://classroom.google.com/c/Mjc0ODY0MzE0OTE1/m/Mjg4NTc4Njg0Mjg1/details)).
+
+## Заметки
+
+- Решения будут оценены лишь в том случае, если программа компилируется:
+    - если код не компилируется, то оценочные тесты не будут запущены
+
+- Результирующие баллы высчитываются при каждом новом коммите (до установленного дедлайна)
+- Дедлайн установлен в Google Classroom (за дополнительными вопросами обратитесь к преподавателю)
