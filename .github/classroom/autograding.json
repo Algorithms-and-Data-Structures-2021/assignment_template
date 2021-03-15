@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Run linked stack I/O test",
+      "setup": "git submodule update --init --recursive && mkdir -p build && cd build && cmake .. && cmake --build .",
+      "run": "./io_tests/linked_stack_io",
+      "input": "BMW\r\nBMW\r\nMASERATI\r\nBMW",
+      "output": "BMW\r\nBMW\r\nMASERATI\r\nBMW",
+      "comparison": "exact",
+      "timeout": 2,
+      "points": null
+    }
+  ]
+}
