@@ -2,8 +2,8 @@
   "tests": [
     {
       "name": "Run all tests",
-      "setup": "${{github.workspace}}/build",
-      "run": "ctest -VVV -C Release",
+      "setup": null,
+      "run": "ctest -VVV -C Release --test-dir build",
       "timeout": 10,
       "points": null
     }
