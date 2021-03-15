@@ -30,6 +30,7 @@ jobs:
         
       - name: Create Build Environment
         run: cmake -E make_directory ${{github.workspace}}/build
+        working_directory: ${{github.workspace}}
 
       - name: Configure CMake
         shell: bash
