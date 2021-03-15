@@ -36,3 +36,5 @@ jobs:
         run: cmake --build . --config $BUILD_TYPE
 
       - uses: education/autograding@v1
+        with:
+          working-directory: ${{github.workspace}}/build
