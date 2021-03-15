@@ -1,6 +1,10 @@
 name: GitHub Classroom Workflow
 
-on: [push]
+on: 
+  push:
+    branches:
+    - main
+    - feedback
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -9,7 +13,7 @@ env:
 jobs:
   build:
     name: Autograding
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
