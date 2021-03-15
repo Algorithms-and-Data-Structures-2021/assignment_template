@@ -14,27 +14,29 @@ jobs:
   build:
     name: Autograding
     runs-on: ubuntu-20.04
+    
+    defaults:
+      run:
+        working-directory: ${{github.workspace}}/build
+    
     steps:
+      - name: Install dependencies
+        run: sudo apt-get -qq update > /dev/null && sudo apt-get install -qq valgrind > /dev/null
+
       - uses: actions/checkout@v2
         with:
           submodules: 'recursive'
-          
-      - name: Install dependencies
-        run: sudo apt-get -qq update > /dev/null && sudo apt-get install -qq valgrind
+          path: ${{github.workspace}}
         
       - name: Create Build Environment
         run: cmake -E make_directory ${{github.workspace}}/build
 
       - name: Configure CMake
         shell: bash
-        working-directory: ${{github.workspace}}/build
         run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
       
       - name: Build
-        working-directory: ${{github.workspace}}/build
         shell: bash
         run: cmake --build . --config $BUILD_TYPE
 
       - uses: education/autograding@v1
-        with:
-          working-directory: ${{github.workspace}}/build
