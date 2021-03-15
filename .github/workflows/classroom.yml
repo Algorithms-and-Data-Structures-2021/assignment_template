@@ -14,20 +14,14 @@ jobs:
   build:
     name: Autograding
     runs-on: ubuntu-20.04
-    
-    defaults:
-      run:
-        shell: bash
-        working-directory: build
 
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: 'recursive'
-          path: ${{github.workspace}}
         
-#       - name: Create Build Environment
-#         run: cmake -E make_directory ${{github.workspace}}/build
+      - name: Create Build Environment
+        run: cmake -E make_directory ${{github.workspace}}/build
 
       - name: Configure CMake
         shell: bash
@@ -37,5 +31,6 @@ jobs:
       - name: Build
         shell: bash
         run: cmake --build . --config $BUILD_TYPE
+        working-directory: ${{github.workspace}}/build
         
       - uses: education/autograding@v1
