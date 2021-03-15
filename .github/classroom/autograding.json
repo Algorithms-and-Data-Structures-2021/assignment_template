@@ -2,7 +2,7 @@
   "tests": [
     {
       "name": "Run all tests",
-      "setup": "mkdir -p build && cd build && cmake ..  -DCMAKE_BUILD_TYPE=Release && cmake --build .  --config Release",
+      "setup": null,
       "run": "ctest -VVV -C Release",
       "timeout": 10,
       "points": null
