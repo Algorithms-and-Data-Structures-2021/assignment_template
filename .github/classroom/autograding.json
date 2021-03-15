@@ -2,8 +2,8 @@
   "tests": [
     {
       "name": "Run all tests",
-      "setup": null,
-      "run": "ctest -VVV -C Release --test-dir build",
+      "setup": "cd build",
+      "run": "ctest -VVV -C Release",
       "timeout": 10,
       "points": null
     }
