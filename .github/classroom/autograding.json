@@ -1,11 +1,6 @@
 {
   "tests": [
     {
-      "name": "Run all tests",
-      "setup": "",
-      "run": "cd build && ctest -VV",
-      "timeout": 10,
-      "points": 0
     }
   ]
 }
