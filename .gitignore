@@ -32,7 +32,10 @@
 *.app
 
 # IDE files
-.idea
+.idea/
 
 # Build files
-*build*
+*[Bb]uild*/
+
+# Log files
+[Ll]ogs/
