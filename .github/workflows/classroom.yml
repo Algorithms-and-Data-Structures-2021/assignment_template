@@ -1,0 +1,13 @@
+name: GitHub Classroom Workflow
+
+on: [push]
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+      - uses: education/autograding@v1
