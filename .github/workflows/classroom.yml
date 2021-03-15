@@ -20,8 +20,8 @@ jobs:
         working-directory: ${{github.workspace}}/build
     
     steps:
-      - name: Install dependencies
-        run: sudo apt-get -qq update > /dev/null && sudo apt-get install -qq valgrind > /dev/null
+#       - name: Install dependencies
+#         run: sudo apt-get -qq update > /dev/null && sudo apt-get install -qq valgrind > /dev/null
 
       - uses: actions/checkout@v2
         with:
