@@ -5,7 +5,7 @@
       "setup": "",
       "run": "cd build && ctest -VV",
       "timeout": 10,
-      "points": 1
+      "points": 0
     }
   ]
 }
