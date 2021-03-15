@@ -3,9 +3,9 @@
     {
       "name": "Run all tests",
       "setup": "cd build",
-      "run": "ctest -VVV -C Release",
+      "run": "ctest -VV",
       "timeout": 10,
-      "points": null
+      "points": 1
     }
   ]
 }
