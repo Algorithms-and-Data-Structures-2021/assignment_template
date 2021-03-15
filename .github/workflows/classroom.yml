@@ -33,6 +33,6 @@ jobs:
         working-directory: ${{github.workspace}}/build
         
       - name: Change directory
-        working-directory: ${{github.workspace}}/build
+        run: cd ${{github.workspace}}/build
         
       - uses: education/autograding@v1
