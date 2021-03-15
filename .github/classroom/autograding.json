@@ -2,7 +2,7 @@
   "tests": [
     {
       "name": "Run all tests",
-      "setup": null,
+      "setup": "${{github.workspace}}/build",
       "run": "ctest -VVV -C Release",
       "timeout": 10,
       "points": null
