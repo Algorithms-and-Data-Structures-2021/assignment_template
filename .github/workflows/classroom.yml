@@ -2,6 +2,10 @@ name: GitHub Classroom Workflow
 
 on: [push]
 
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
 jobs:
   build:
     name: Autograding
@@ -10,4 +14,21 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: 'recursive'
+          
+      - name: Install dependencies
+        run: sudo apt-get -qq update > /dev/null && sudo apt-get install -qq valgrind
+        
+      - name: Create Build Environment
+        run: cmake -E make_directory ${{github.workspace}}/build
+
+      - name: Configure CMake
+        shell: bash
+        working-directory: ${{github.workspace}}/build
+        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+      
+      - name: Build
+        working-directory: ${{github.workspace}}/build
+        shell: bash
+        run: cmake --build . --config $BUILD_TYPE
+
       - uses: education/autograding@v1
