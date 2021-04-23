@@ -1,6 +1,6 @@
 # This is the top-level CMakeLists.txt file
 
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
 project(project_name)
 
