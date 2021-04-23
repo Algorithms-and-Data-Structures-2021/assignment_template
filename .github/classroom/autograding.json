@@ -3,7 +3,7 @@
     {
       "name": "Run all tests",
       "setup": "",
-      "run": "cd build && ctest -VV",
+      "run": "cd build && ctest -VVV",
       "timeout": 10,
       "points": 0
     }
